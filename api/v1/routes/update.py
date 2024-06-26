@@ -13,9 +13,9 @@ def update_task(id):
     task = Task.query.filter_by(id=id).first()
     if not task:
         return jsonify({'error': f'Task with id {id} was not found.'})
-    # Validate description and status from incoming data
+    # Validate title and status from incoming data
     if not request.form.get('description'):
-        return jsonify({'error': 'description field cannot be empty.'}), 400
+        return jsonify({'error': 'title field cannot be empty.'}), 400
     if not request.form.get('status'):
         return jsonify({'error': 'status field cannot be empty.'}), 400
     # Parse due_date string to a datetime object
@@ -26,6 +26,7 @@ def update_task(id):
         except ValueError:
             return jsonify({'error': 'Incorrect date format, should be YY-MM-DD.'}), 400
     # Update the task information in the database
+    task.title = request.form.get('title')
     task.description = request.form.get('description')
     task.due_date = due_date
     task.status =  request.form.get('status')
