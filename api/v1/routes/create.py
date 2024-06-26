@@ -10,13 +10,14 @@ from flask import request
 def create_task():
     "Create a new task in storage"
     # Retrieve form data
+    title = request.form.get('title')
     description = request.form.get('description')
     due_date = request.form.get('due_date')
     status = request.form.get('status')
     priority = request.form.get('priority')
-    # Validate description and status
-    if not description:
-        return jsonify({'error': 'description is a required field.'}), 400
+    # Validate title and status
+    if not title:
+        return jsonify({'error': 'title is a required field.'}), 400
     if not status:
         return jsonify({'error': 'status is a required field.'}), 400
     # Parse due_date string to a datetime object
@@ -27,6 +28,7 @@ def create_task():
             return jsonify({'error': 'Incorrect date format, should be YY-MM-DD.'}), 400
 
     new_task = {
+        'title': title,
         'description': description,
         'due_date': due_date,
         'status': status,
