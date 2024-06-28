@@ -1,0 +1,26 @@
+.footer {
+    width: 100%;
+    height: 50px;
+    background-color: #f1f1f1;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer p {
+    font-size: 13px;
+}
+
+.footer p:not(:last-child) {
+    margin-right: 12px;
+}
+
+.footer p:not(:first-child):hover {
+    text-decoration: underline;
+}
+
+.footer p:not(:first-child):active {
+    color: gray;
+}

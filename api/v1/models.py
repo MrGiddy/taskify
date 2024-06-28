@@ -32,11 +32,16 @@ class Task(db.Model):
 
     def to_dict(self):
         """Makes a dictionary of a task"""
+        if self.due_date:
+            due_date = datetime.strftime(self.due_date, '%Y-%m-%d')
+        else:
+            due_date = None
+
         return {
             'id': self.id,
             'title': self.title,
             'description': self.description,
-            'due_date': datetime.strftime(self.due_date, '%Y-%m-%d'),
+            'due_date': due_date,
             'status': self.status,
             'priority': self.priority,
             'created_at': self.created_at,

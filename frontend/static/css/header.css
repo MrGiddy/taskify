@@ -1,0 +1,49 @@
+header {
+    width: 100%;
+    height: 50px;
+    margin: 0px;
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+}
+
+header a {
+    padding: 12px;
+    margin-right: 0px;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.header-right {
+    margin-right: 18px;
+}
+
+.header-right a {
+    border-radius: 4px;
+}
+
+header .logo a {
+    margin-left: 8px;
+    font-size: 25px;
+    font-family: "Comic Sans Ms", "Comic Sans", cursive;
+    font-style: italic;
+    font-weight: 700;
+    color: rgb(15, 15, 163)
+}
+
+.header-right a:hover {
+    background-color: #ddd;
+    color: black;
+    transition: 0.15s;
+}
+
+.header-right a:active {
+    background-color: rgb(15, 15, 163);
+    color: white;
+    transition: 0.15s;
+}

@@ -18,8 +18,8 @@ def create_task():
     # Validate title and status
     if not title:
         return jsonify({'error': 'title is a required field.'}), 400
-    if not status:
-        return jsonify({'error': 'status is a required field.'}), 400
+    # if not status:
+    #     return jsonify({'error': 'status is a required field.'}), 400
     # Parse due_date string to a datetime object
     if due_date:
         try:
