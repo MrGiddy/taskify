@@ -1,0 +1,14 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Comic Sans Ms", "Comic Sans", cursive;
+    background-color: #f4f4f4;
+    min-height: 100vh;
+}
+
+main {
+    padding: 20px;
+}
