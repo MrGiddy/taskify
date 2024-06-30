@@ -1,32 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% block title %}Taksify - Home{% endblock title %}</title>
-  <link rel="stylesheet" href="../static/css/general.css">
-  <link rel="stylesheet" href="../static/css/header.css">
-  <link rel="stylesheet" href="../static/css/footer.css">
-  <link rel="stylesheet" href="../static/css/create.css">
-  <link rel="stylesheet" href="../static/css/list.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="../static/scripts/create.js" defer></script>
-  <script src="../static/scripts/list.js" defer></script>
-  <script src="../static/scripts/delete.js" defer></script>
-  <script src="../static/scripts/update.js" defer></script>
-</head>
-<body>
-  <!-- The header section -->
-  <header>
-    <div class="logo"><a href="#">TaskiFy</a></div>
-    <div href="#" class="header-right">
-      <a href="#">Home</a>
-      <a href="#contact">About</a>
-      <a href="#about">Contact</a>
-      <a href="#about">Login</a>
-      <a href="#about">Signup</a>
-    </div>
-  </header>
+{% extends "base.html" %}
+{% block content %}
   <main>
     <div class="task-container">
       <div class="task-header">
@@ -35,10 +8,8 @@
       </div>
       <div id="task-list">
         <!-- Task items will be inserted here dynamically -->
-
       </div>
     </div>
-
     <!-- The form to create a task -->
     <div id="task-form-modal" class="modal">
       <div class="modal-content">
@@ -52,14 +23,6 @@
             <label for="task-desc">Description: </label>
             <textarea id="task-desc" name="description" required></textarea>
           </div>
-          <!-- <div class="form-group" id="status-group">
-            <label for="task-status">Status:</label>
-            <select id="task-status" name="status" required>
-              <option value="pending">pending</option>
-              <option value="ongoing">ongoing</option>
-              <option value="completed">completed</option>
-            </select>
-          </div> -->
           <div class="form-group">
             <label for="priority">Priority:</label>
             <select id="priority" name="priority" required>
@@ -76,7 +39,6 @@
         </form>
       </div>
     </div>
-
     <div id="update-task-form-modal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
@@ -115,11 +77,4 @@
       </div>
     </div>
   </main>
-  <!-- The footer section -->
-  <footer class="footer">
-    <p>Copyright &copy 2024 TaskiFy</p>
-    <p>Privacy Policy</p>
-    <p>Terms of Service</p>
-  </footer>
-</body>
-</html>
+{% endblock content %}

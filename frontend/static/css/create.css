@@ -49,6 +49,7 @@
 }
 
 .modal-content {
+    position: relative;
     background-color: #fff;
     margin: 15% auto;
     padding: 20px;
@@ -57,26 +58,13 @@
     border-radius: 20px;
 }
 
-/* .hide {
-    display: none;
-}
-
-.unhide {
-    display: block;
-} */
-
-/* .modal-content
-#task-status,
-#priority,
-#task-due-date {
-    width: 200px;
-} */
-
 .close {
     color: #aaa;
-    float: right;
     font-size: 28px;
     font-weight: bold;
+    position: absolute;
+    right: 16px;
+    top: 3px;
 }
 
 .close:hover,

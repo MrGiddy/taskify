@@ -1,0 +1,49 @@
+.about-main {
+    max-width: 800px;
+    margin: 50px auto;
+}
+
+.about-main h1, .about-main h2, .about-main h3 {
+    margin-top: 0;
+}
+
+.about-description, .about-features, .about-team, .about-contact {
+    margin-bottom: 2rem;
+}
+
+.about-features ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.about-features li {
+    background-color: #e7e7e7;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.about-team {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.about-team-member {
+    flex: 1 1 calc(33.333% - 1rem);
+    background-color: white;
+    padding: 1rem;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.about-team-member img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
