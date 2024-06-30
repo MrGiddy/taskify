@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% if title %}
+    <title>Taksify - {{ title }}</title>
+  {% else %}
+    <title>Taskify</title>
+  {% endif %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/general.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/create.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/list.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/signup.css') }}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="../static/scripts/create.js" defer></script>
+  <script src="../static/scripts/list.js" defer></script>
+  <script src="../static/scripts/delete.js" defer></script>
+  <script src="../static/scripts/update.js" defer></script>
+</head>
+<body>
+  <!-- The header section -->
+  <header>
+    <div class="logo"><a href="http://127.0.0.1:5001/home">TaskiFy</a></div>
+    <div class="header-right">
+      <a href="/home">Home</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+      <a href="/login">Login</a>
+      <a href="/signup">SignUp</a>
+    </div>
+  </header>
+  {% block content %}{% endblock %}
+
+  <!-- The footer section -->
+  <footer class="footer">
+    <p>Copyright &copy 2024 TaskiFy</p>
+    <p>Privacy Policy</p>
+    <p>Terms of Service</p>
+  </footer>
+</body>
+</html>
