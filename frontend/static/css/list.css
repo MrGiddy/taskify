@@ -5,7 +5,7 @@
 }
 
 .note-card {
-    flex-basis: 49.193%;
+    flex-basis: calc(50% - 5px);
     background-color: #f5f5f5;
     border-radius: 5px;
     padding: 20px;
