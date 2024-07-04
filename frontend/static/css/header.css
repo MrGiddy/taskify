@@ -10,6 +10,7 @@ header {
     left: 0;
     right: 0;
     position: fixed;
+    font-family: Poppins;
 }
 
 header a {
@@ -32,11 +33,9 @@ header a {
 
 header .logo a {
     margin-left: 8px;
-    font-size: 25px;
-    font-family: "Comic Sans Ms", "Comic Sans", cursive;
-    font-style: italic;
-    font-weight: 700;
-    color: rgb(15, 15, 163)
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(15, 15, 163);
 }
 
 .header-right a:hover {
