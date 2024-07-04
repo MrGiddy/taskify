@@ -8,3 +8,5 @@ from api.v1.routes.create import *
 from api.v1.routes.retrieve import *
 from api.v1.routes.update import *
 from api.v1.routes.delete import *
+from api.v1.routes.signup import *
+from api.v1.routes.login import *

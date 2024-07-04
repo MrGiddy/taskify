@@ -1,80 +1,175 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
+
+{% block home_page_styles %}
+<style>
+    /* main section */
+    .home-main {
+        padding: 0;
+    }
+
+    /* Hero Section */
+    .hero {
+        background: rgb(15, 15, 163);
+        color: #fff;
+        padding: 100px 20px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+    }
+
+    .hero p {
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+
+    .hero .cta-button {
+        background-color: #28a745;
+        color: #fff;
+        padding: 15px 30px;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+    .hero .cta-button:hover {
+        background-color: #218838;
+    }
+
+    /* Features Section */
+    .features {
+        display: flex;
+        justify-content: space-around;
+        padding: 50px 20px;
+        background-color: #f4f4f4;
+    }
+
+    .feature {
+        text-align: center;
+        flex-basis: 30%;
+    }
+
+    .feature h2 {
+        margin-bottom: 15px;
+        font-size: 24px;
+        color: rgb(15, 15, 163);
+    }
+
+    .feature p {
+        font-size: 16px;
+    }
+
+    /* About Section */
+    .about {
+        padding: 50px 20px;
+        background-color: #fff;
+        text-align: center;
+    }
+
+    .about h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+        color: #28a745;
+    }
+
+    .about p {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .about .team h3 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    .about .team ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .about .team ul li {
+        margin-bottom: 10px;
+    }
+
+    .about .team ul li p {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .about .team ul li a {
+        text-decoration: none;
+        color: rgb(15, 15, 163);
+    }
+
+    .about .team ul li a:hover {
+        text-decoration: underline;
+    }
+
+    .about .repo-link h3 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    .about .repo-link a {
+        text-decoration: none;
+        color: rgb(15, 15, 163);
+        font-size: 18px;
+    }
+
+    .about .repo-link a:hover {
+        text-decoration: underline;
+    }
+
+    .social-handles a {
+        text-decoration: none;
+        margin-left: 20px;
+    }
+</style>
+{% endblock home_page_styles %}
+
 {% block content %}
-  <main>
-    <div class="task-container">
-      <div class="task-header">
-        <h2>My Tasks</h2>
-        <button id="create-task-button">Create</button>
-      </div>
-      <div id="task-list">
-        <!-- Task items will be inserted here dynamically -->
-      </div>
+<main class="home-main">
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to TaskiFy</h1>
+            <p>Effortlessly manage your tasks and projects.</p>
+            {% if session.get('user_logged_in') %}
+                <a href="/index" class="cta-button">Get Started</a>
+            {% else %}
+                <a href="/signup" class="cta-button">Get Started</a>
+            {% endif %}
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="feature">
+            <h2>Create Tasks</h2>
+            <p>Easily create new tasks for the day, week or month.</p>
+        </div>
+        <div class="feature">
+            <h2>View Tasks</h2>
+            <p>Retrieve all your tasks at the click of a button.</p>
+        </div>
+        <div class="feature">
+            <h2>Update Tasks</h2>
+            <p>Change existing task information at will.</p>
+        </div>
+        <div class="feature">
+            <h2>Delete Tasks</h2>
+            <p>Clean up your task-base easily using the delete feature.</p>
+        </div>
+    </section>
+    <section class="about">
+        <h2>About TaskiFy</h2>
+        <p>TaskiFy was built as part of ALX Software Engineering portfio project to understand how different parts of a software system work together. The inspiration came from the need to stay organized and manage tasks efficiently. Through TaskiFy, I gained experience developing a functional web application that can be used by anybody.</p>
+        <div class="social-handles">
+            <a href="https://www.linkedin.com/in/matumbai-binale-8ba711163/" target="_blank" >LinkedIn</a> 
+            <a href="https://github.com/MrGiddy" target="_blank">GitHub</a> 
+            <a href="https://x.com/MatumbaiBinale" target="_blank">Twitter</a>
+            <a href="https://github.com/MrGiddy/taskify" target="_blank">TaskiFyGitHub</a>
     </div>
-    <!-- The form to create a task -->
-    <div id="task-form-modal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <form id="task-form" class="task-form-create">
-          <div class="form-group">
-            <label for="task-title">Title: </label>
-            <input type="text" id="task-title" name="title" required>
-          </div>
-          <div class="form-group">
-            <label for="task-desc">Description: </label>
-            <textarea id="task-desc" name="description" required></textarea>
-          </div>
-          <div class="form-group">
-            <label for="priority">Priority:</label>
-            <select id="priority" name="priority" required>
-              <option value="medium">medium</option>
-              <option value="low">low</option>
-              <option value="high">high</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="task-due-date">Due Date</label>
-            <input type="date" id="task-due-date" name="due_date" requred>
-          </div>
-          <button id="add-task-button" type="submit">Add</button>
-        </form>
-      </div>
-    </div>
-    <div id="update-task-form-modal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <!-- The form to update a task-->
-        <form id="update-task-form">
-          <div class="form-group">
-            <label for="update-task-title">Title: </label>
-            <input type="text" id="update-task-title" name="title" required>
-          </div>
-          <div class="form-group">
-            <label for="update-task-desc">Description: </label>
-            <textarea id="update-task-desc" name="description" required></textarea>
-          </div>
-          <div class="form-group" id="update-status-group">
-            <label for="update-task-status">Status:</label>
-            <select id="update-task-status" name="status" required>
-              <option value="pending">pending</option>
-              <option value="ongoing">ongoing</option>
-              <option value="completed">completed</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="update-priority">Priority:</label>
-            <select id="update-priority" name="priority" required>
-              <option value="medium">medium</option>
-              <option value="low">low</option>
-              <option value="high">high</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="update-task-due-date">Due Date</label>
-            <input type="date" id="update-task-due-date" name="due_date" requred>
-          </div>
-          <button id="update-task-button" type="submit">Update</button>
-        </form>
-      </div>
-    </div>
-  </main>
+    </section>
+</main>
 {% endblock content %}

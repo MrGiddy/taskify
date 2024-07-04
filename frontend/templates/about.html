@@ -1,12 +1,15 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
+
+{% block content %}
 <main class="about-main">
   <section class="about-description">
     <h2>What is Taskify?</h2>
     <p>
       Taskify is a simple task management application designed to help you
-      organize your tasks and boost your productivity. Whether you're managing
-      personal projects or collaborating with a team, Taskify has the tools you
-      need to stay on top of your tasks.
+      organize your tasks and boost your productivity.
+    </p>
+    <p>
+      Want to stay on top of your tasks? Register <a href="/signup">now</a>.
     </p>
   </section>
 
@@ -22,7 +25,7 @@
     </ul>
   </section>
 
-  <section class="about-team">
+  <section id="about-team" class="about-team">
     <h2>Team</h2>
     <div class="about-team-member">
       <img
@@ -31,6 +34,12 @@
       />
       <h3>Matumbai Binale</h3>
       <p>Lead Developer &amp Engineer</p>
+      <div class="social-handles">
+        <a href="https://www.linkedin.com/in/matumbai-binale-8ba711163/" target="_blank" >LinkedIn</a> 
+        <a href="https://github.com/MrGiddy" target="_blank">GitHub</a>
+        <a href="https://x.com/MatumbaiBinale" target="_blank">Twitter</a>
+        <a href="https://github.com/MrGiddy/taskify" target="_blank">TaskiFyGitHub</a>
+    </div>
     </div>
   </section>
 
