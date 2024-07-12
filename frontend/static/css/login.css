@@ -1,15 +1,31 @@
 /* Specific styles for login page */
-.login-main .modal {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0,0,0,0.1);
+/* .login-page-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 50vh auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+} */
+
+.login-page-container {
+    width: 100%;
+    max-width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
 }
 
-.login-main h2 {
+.login-page-container h2 {
     text-align: center;
     margin-bottom: 20px;
-    color: #28a745;
+    color: #28a745; /* Green theme color */
 }
 
 .login-form-group {
@@ -44,16 +60,16 @@
     background-color: #0f0f9c; /* Darker shade of rgb(15, 15, 163) */
 }
 
-.login-main p {
+.login-page-container p {
     text-align: center;
     margin-top: 15px;
 }
 
-.login-main p a {
+.login-page-container p a {
     color: #28a745; /* Green theme color */
     text-decoration: none;
 }
 
-.login-main p a:hover {
+.login-page-container p a:hover {
     text-decoration: underline;
 }
