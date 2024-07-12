@@ -1,23 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
-<main class="login-main">
-  <div class="modal">
-      <div class="modal-content">
-        <div class="close">&times;</div>
-        <h2>SignIn to TaskiFy</h2>
-        <form action="/login" method="post">
-          <div class="login-form-group">
+<div class="login-page-container">
+    <h2>SignIn to TaskiFy</h2>
+    <form action="/login" method="post">
+        <div class="login-form-group">
             <label for="username">Username</label>
-            <input type="text" id="username" name="username" required />
-          </div>
-          <div class="login-form-group">
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="login-form-group">
             <label for="password">Password</label>
-            <input type="password" id="password" name="password" required />
-          </div>
-          <button type="submit" class="login-submit-button">Login</button>
-        </form>
-        <p>Don't have an account? <a href="/signup">Sign up here</a>.</p>
-      </div>
-    </div>
-</main>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit" class="login-submit-button">Login</button>
+    </form>
+    <p>Don't have an account? <a href="/signup">Sign up here</a>.</p>
+</div>
 {% endblock %}
