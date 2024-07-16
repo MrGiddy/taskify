@@ -20,7 +20,6 @@ Taskify is a simple task management application designed to help users organize 
 │   ├── __init__.py
 │   ├── app.py
 │   ├── config.py
-│   ├── requirements.txt
 │   └── v1
 │       ├── __init__.py
 │       ├── models.py
@@ -32,7 +31,6 @@ Taskify is a simple task management application designed to help users organize 
 │           ├── retrieve.py
 │           ├── signup.py
 │           └── update.py
-├── clean.sh
 ├── frontend
 │   ├── __init__.py
 │   ├── app.py
